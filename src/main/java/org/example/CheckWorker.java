@@ -34,7 +34,7 @@ public class CheckWorker {
         try (Stream<String> stream = Files.lines(filePath, StandardCharsets.UTF_8)) {
             return stream
                     .map(line -> {
-                        String[] fields = line.split("\t");
+                        String[] fields = line.split(",");
                         return new Worker(
                                 Long.parseLong(fields[0].trim()),
                                 fields[1].trim(),
